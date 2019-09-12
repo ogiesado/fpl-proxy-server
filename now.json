@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "name": "fpl-proxy-server",
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@now/node-server"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/index.js",
+      "methods": ["GET"]
+    },
+    {
+      "src": "/api/.*",
+      "dest": "/index.js",
+      "methods": ["GET"]
+    }
+  ]
+}
